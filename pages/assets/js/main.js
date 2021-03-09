@@ -109,7 +109,6 @@ function ms_home_slider() {
       keyboard: true,
       simulateTouch: false,
       parallax: true,
-      // effect: 'slide',
       direction: "vertical",
       pagination: {
         el: ".swiper-pagination",
@@ -120,23 +119,19 @@ function ms_home_slider() {
         prevEl: ".swiper-button-prev",
       },
     });
-    $(".expanded-timeline__counter span:first-child").text("1");
-    $(".expanded-timeline__counter span:last-child").text(swiper.slides.length);
-    swiper.on("slideChange", function () {
-      $(".expanded-timeline__counter span:first-child").text(
-        swiper.activeIndex + 1
-      );
-    });
-    var swiper = new Swiper(".swiper-container1", {
+  }
+  if ($.exists(".swiper-container1")) {
+    
+    var swiper1 = new Swiper(".swiper-container1", {
       loop: false,
-      speed: 1000,
+      speed: 1500,
       grabCursor: false,
       mousewheel: true,
       keyboard: true,
       simulateTouch: false,
       parallax: true,
-      effect: 'slide',
-    //   direction: "vertical",
+      effect: "slide",
+
       pagination: {
         el: ".swiper-pagination",
         type: "progressbar",
@@ -147,10 +142,12 @@ function ms_home_slider() {
       },
     });
     $(".expanded-timeline__counter span:first-child").text("1");
-    $(".expanded-timeline__counter span:last-child").text(swiper.slides.length);
-    swiper.on("slideChange", function () {
+    $(".expanded-timeline__counter span:last-child").text(
+      swiper1.slides.length
+    );
+    swiper1.on("slideChange", function () {
       $(".expanded-timeline__counter span:first-child").text(
-        swiper.activeIndex + 1
+        swiper1.activeIndex + 1
       );
     });
   }
